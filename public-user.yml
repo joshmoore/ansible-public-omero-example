@@ -1,6 +1,6 @@
 # Install OMERO.server and OMERO.web with a public user on localhost
 
-- hosts: all
+- hosts: public-user
   roles:
 
     - role: openmicroscopy.postgresql

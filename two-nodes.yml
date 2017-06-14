@@ -2,7 +2,7 @@
 # - PostgreSQL database
 # - OMERO.server with OMERO.web
 
-- hosts: omero-database
+- hosts: two-nodes-database
   roles:
     - role: openmicroscopy.postgresql
 
@@ -19,7 +19,7 @@
     postgresql_version: "9.6"
 
 
-- hosts: omero-server
+- hosts: two-nodes-omero
   roles:
     - role: openmicroscopy.omero-server
     - role: openmicroscopy.omero-web

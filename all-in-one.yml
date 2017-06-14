@@ -1,6 +1,6 @@
 # OMERO single-node deployment
 
-- hosts: omero-allinone
+- hosts: all-in-oner
   roles:
     - role: openmicroscopy.postgresql
     - role: openmicroscopy.omero-server

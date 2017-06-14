@@ -4,8 +4,16 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
   end
 
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "playbook.yml"
-    ansible.galaxy_role_file = "requirements.yml"
+
+  [
+    "public-user",
+    "all-in-one",
+    "two-nodes-database",
+    "two-nodes-omero"
+  ].each do |server|
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "#{server}.yml"
+      ansible.galaxy_role_file = "requirements.yml"
+    end
   end
 end

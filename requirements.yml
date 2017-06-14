@@ -1,17 +1,10 @@
 ---
-
 - src: openmicroscopy.postgresql
 
-- name: openmicroscopy.omero-common
-  src:  https://github.com/openmicroscopy/ansible-role-omero-common.git
-  # TODO: workaround for https://github.com/ansible/galaxy-issues/issues/259
+- src: openmicroscopy.omego
 
-- name: openmicroscopy.omego
+- src: openmicroscopy.omero-server
 
-- name: openmicroscopy.omero-server
+- src: openmicroscopy.omero-web
 
-- name: openmicroscopy.omero-web
-
-- name: omero-user
-  src:  https://github.com/openmicroscopy/ansible-role-omero-user.git
-  # TODO: workaround for missing owner
+- src: openmicroscopy.omero-user

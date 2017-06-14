@@ -2,13 +2,13 @@ import testinfra.utils.ansible_runner
 import pytest
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
-    '.molecule/ansible_inventory').get_hosts('all')
+    '.molecule/ansible_inventory').get_hosts('omero-server')
 
 OMERO = '/opt/omero/server/OMERO.server/bin/omero'
 
 
 @pytest.mark.parametrize('name', [
-    'omero-server', 'omero-web', 'nginx', 'postgresql-9.6'
+    'omero-server'
 ])
 def test_services_running_and_enabled(Service, name):
     service = Service(name)

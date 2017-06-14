@@ -17,16 +17,31 @@ vagrant:
         memory: 2048
         cpus: 1
   instances:
-    - name: omero-server
+    - name: all-in-one
+    - name: two-nodes
+    - name: public-user
 
 docker:
   containers:
-  - name: omero-server
+  - name: all-in-one
+    image: openmicroscopy/centos-systemd-ip
+    image_version: latest
+    privileged: True
+  - name: two-nodes-database
+    image: openmicroscopy/centos-systemd-ip
+    image_version: latest
+    privileged: True
+  - name: two-nodes-omero
+    image: openmicroscopy/centos-systemd-ip
+    image_version: latest
+    privileged: True
+  - name: public-user
     image: centos/systemd
     image_version: latest
     privileged: True
 
 ansible:
+  playbook: site.yml
   host_vars:
     omero-server:
       omero_server_systemd_require_network: False

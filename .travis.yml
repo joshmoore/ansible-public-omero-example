@@ -8,9 +8,4 @@ install:
   - pip install ome-ansible-molecule-dependencies
 
 script:
-  - cd $BASEDIR && molecule test
-
-env:
-  - BASEDIR: .
-  - BASEDIR: allinone
-  - BASEDIR: two-nodes
+  - molecule test
