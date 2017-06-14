@@ -6,3 +6,4 @@
 - include: all-in-one.yml
 - include: two-nodes.yml
 - include: public-user.yml
+- include: firewalled.yml

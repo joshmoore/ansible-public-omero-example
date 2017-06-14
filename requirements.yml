@@ -8,3 +8,5 @@
 - src: openmicroscopy.omero-web
 
 - src: openmicroscopy.omero-user
+
+- src: geerlingguy.firewall

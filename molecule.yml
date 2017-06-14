@@ -17,9 +17,10 @@ vagrant:
         memory: 2048
         cpus: 1
   instances:
-    - name: all-in-one
-    - name: two-nodes
-    - name: public-user
+    # name: all-in-one
+    # name: two-nodes
+    # name: public-user
+    - name: firewalled
 
 docker:
   containers:
@@ -36,6 +37,10 @@ docker:
     image_version: latest
     privileged: True
   - name: public-user
+    image: centos/systemd
+    image_version: latest
+    privileged: True
+  - name: firewalled
     image: centos/systemd
     image_version: latest
     privileged: True

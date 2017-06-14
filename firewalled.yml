@@ -1,10 +1,14 @@
 # OMERO single-node deployment
+# which manages the iptables
+# to open only necessary ports.
 
-- hosts: all-in-one
+- hosts: firewalled
   roles:
     - role: openmicroscopy.postgresql
     - role: openmicroscopy.omero-server
     - role: openmicroscopy.omero-web
+    - role: openmicroscopy.omero-web
+    - role: geerlingguy.firewall
 
   vars:
     postgresql_users_databases:
@@ -12,3 +16,8 @@
       password: omero
       databases: [omero]
     postgresql_version: "9.6"
+    firewall_allowed_tcp_ports:
+      - "22"
+      - "80"
+      - "4063"
+      - "4064"

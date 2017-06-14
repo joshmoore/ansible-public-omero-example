@@ -9,7 +9,8 @@ Vagrant.configure("2") do |config|
     "public-user",
     "all-in-one",
     "two-nodes-database",
-    "two-nodes-omero"
+    "two-nodes-omero",
+    "firewalled",
   ].each do |server|
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "#{server}.yml"
