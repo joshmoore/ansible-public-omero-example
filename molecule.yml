@@ -25,15 +25,15 @@ vagrant:
 docker:
   containers:
   - name: all-in-one
-    image: openmicroscopy/centos-systemd-ip
+    image: centos/systemd
     image_version: latest
     privileged: True
   - name: two-nodes-database
-    image: openmicroscopy/centos-systemd-ip
+    image: centos/systemd
     image_version: latest
     privileged: True
   - name: two-nodes-omero
-    image: openmicroscopy/centos-systemd-ip
+    image: centos/systemd
     image_version: latest
     privileged: True
   - name: public-user
